@@ -1,3 +1,12 @@
 # D11_Abgabe_AndroidApp_GEOImages
 
-First Test 
+**Group**
+
+**Author**
+
+**Licenses**
+
+**App**
+
+**Worfklow**
+
