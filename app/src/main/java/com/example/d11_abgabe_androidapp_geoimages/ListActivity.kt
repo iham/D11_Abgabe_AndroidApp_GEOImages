@@ -7,11 +7,8 @@ import android.widget.Toast
 class ListActivity : AppCompatActivity() {
 
     // Using https://kotlinlang.org/docs/delegated-properties.html#lazy-properties
-    private val richNotesDB: RichNotesDB by lazy {
-        RichNotesDB.getInstance(this)
-    }
     private val richNoteDao: RichNoteDao by lazy {
-        richNotesDB.richNoteDao
+        RichNotesDB.getInstance(this).richNoteDao
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
