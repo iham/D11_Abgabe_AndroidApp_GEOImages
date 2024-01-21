@@ -6,6 +6,7 @@ import android.widget.Toast
 
 class ListActivity : AppCompatActivity() {
 
+    // Using https://kotlinlang.org/docs/delegated-properties.html#lazy-properties
     private val richNotesDB: RichNotesDB by lazy {
         RichNotesDB.getInstance(this)
     }
