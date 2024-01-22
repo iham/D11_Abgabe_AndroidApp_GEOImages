@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:text="List" />
+        android:text="Grid" />
 
     <include layout="@layout/navigation" />
 

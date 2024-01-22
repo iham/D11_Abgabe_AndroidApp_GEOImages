@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/add"
+        android:icon="@drawable/ic_action_sort"
+        android:title="Sort"
+        app:showAsAction="always">
+        <menu>
+            <item android:id="@+id/title_asc"
+                android:icon="@drawable/ic_action_sort_up"
+                android:title="Sort Up" />
+
+            <item android:id="@+id/title_desc"
+                android:icon="@drawable/ic_action_sort_down"
+                android:title="Sort Down" />
+
+        </menu>
+    </item>
+
+</menu>
