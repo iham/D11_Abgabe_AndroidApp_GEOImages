@@ -12,7 +12,6 @@ class GridActivity : BaseActivity() {
         RichNotesDB.getInstance(this).richNoteDao
     }
     override val contentView = R.layout.activity_grid
-    override val toolbarID = R.id.toolbar_list_n_grid
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

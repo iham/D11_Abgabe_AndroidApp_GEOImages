@@ -16,13 +16,12 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     abstract val contentView: Int
-    abstract val toolbarID: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(contentView)
 
-        setSupportActionBar(findViewById(toolbarID))
+        setSupportActionBar(findViewById(R.id.toolbar))
 
         // set listeners for navigation
         findViewById<BottomNavigationView>(R.id.navigation).setOnItemSelectedListener { item ->

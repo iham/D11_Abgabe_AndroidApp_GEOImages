@@ -7,9 +7,9 @@ import android.view.Menu
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationBarView
 
-class ListActivity : BaseActivity() {
+class EditActivity : BaseActivity() {
 
-    override val contentView = R.layout.activity_list
+    override val contentView = R.layout.activity_edit
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +22,7 @@ class ListActivity : BaseActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.sort, menu)
-        menuInflater.inflate(R.menu.add, menu)
+        menuInflater.inflate(R.menu.save, menu)
         return true
     }
 }
