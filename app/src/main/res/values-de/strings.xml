@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">D11 GEOImages</string>
     <string name="list" translatable="true">lListe (sortierbar)</string>
-    <string name="hint_title">Titel</string>
-    <string name="hint_message">Nachricht</string>
+    <string name="hint_title">Note Titel</string>
+    <string name="hint_text">Note Information</string>
     <string name="add">Einfügen</string>
     <string name="save">Sichern</string>
     <string name="note_saved">Rich-Note gespeichert</string>
@@ -20,4 +20,6 @@
     <string name="latitude">Latitude</string>
     <string name="title">Titel</string>
     <string name="my_image_description">Foto Beschreibung</string>
+    <string name="hint_longitude">"Longitude "</string>
+    <string name="hint_latitude">Latitude</string>
 </resources>
