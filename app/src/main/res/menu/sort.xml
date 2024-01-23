@@ -4,17 +4,16 @@
 
     <item android:id="@+id/add"
         android:icon="@drawable/ic_action_sort"
-        android:title="Sort"
+        android:title="@string/sort"
         app:showAsAction="always">
         <menu>
             <item android:id="@+id/title_asc"
                 android:icon="@drawable/ic_action_sort_up"
-                android:title="Sort Up" />
+                android:title="@string/sort_up" />
 
             <item android:id="@+id/title_desc"
                 android:icon="@drawable/ic_action_sort_down"
-                android:title="Sort Down" />
-
+                android:title="@string/sort_down" />
         </menu>
     </item>
 

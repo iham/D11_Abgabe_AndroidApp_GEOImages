@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name" translatable="false">D11 GEOImages</string>
+    <string name="list" translatable="true">list (sortable)</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_message">Message</string>
+    <string name="add">Add</string>
+    <string name="save">Save</string>
+    <string name="note_saved">Note saved</string>
+    <string name="delete">Delete</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="sort" translatable="true">Sort</string>
+    <string name="sort_down" translatable="true">Sort Down</string>
+    <string name="sort_up" translatable="true">Sort Up</string>
+    <string name="note_deleted">Note deleted</string>
+    <string name="delete_message">Do you really want to delete this note?</string>
 </resources>
