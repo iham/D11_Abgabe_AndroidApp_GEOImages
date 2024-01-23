@@ -10,6 +10,10 @@ import com.google.android.material.navigation.NavigationBarView
 class DetailActivity : BaseActivity() {
 
     override val contentView = R.layout.activity_detail
+    override var menuItems = listOf(
+        R.menu.edit,
+        R.menu.remove,
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,12 +22,5 @@ class DetailActivity : BaseActivity() {
 
         // set listeners for navigation
         // Toast.makeText(this, "richNotes in DB: ${richNotes.size}", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.edit, menu)
-        menuInflater.inflate(R.menu.remove, menu)
-        return true
     }
 }
