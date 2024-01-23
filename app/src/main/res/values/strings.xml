@@ -14,4 +14,10 @@
     <string name="sort_up" translatable="true">Sort Up</string>
     <string name="note_deleted">Note deleted</string>
     <string name="delete_message">Do you really want to delete this note?</string>
+    <string name="image">Image</string>
+    <string name="text">Note Text</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="title">Title</string>
+    <string name="my_image_description">Image Description</string>
 </resources>
