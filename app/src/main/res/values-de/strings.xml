@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name" translatable="false">D11 GEOImages</string>
+    <string name="list" translatable="true">lListe (sortierbar)</string>
+    <string name="hint_title">Titel</string>
+    <string name="hint_message">Nachricht</string>
+    <string name="add">Einfügen</string>
+    <string name="save">Sichern</string>
+    <string name="note_saved">Rich-Note gespeichert</string>
+    <string name="delete">Löschen</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="sort" translatable="true">Sortierung</string>
+    <string name="sort_down" translatable="true">absteigend</string>
+    <string name="sort_up" translatable="true">aufsteigend</string>
+    <string name="note_deleted">Rich-Note gelöscht</string>
+    <string name="delete_message">Do you really want to delete this note?</string>
+    <string name="image">Foto</string>
+    <string name="text">Note Text</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="title">Titel</string>
+    <string name="my_image_description">Foto Beschreibung</string>
 </resources>
