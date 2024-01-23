@@ -1,6 +1,7 @@
 package com.example.d11_abgabe_androidapp_geoimages
 
 import android.content.Context
+import androidx.room.ColumnInfo
 import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.Delete
@@ -14,9 +15,9 @@ import androidx.room.Update
 
 @Entity(tableName = "rich_notes")
 data class RichNote (
-    var title: String,
-    var text: String,
-    var image: String,
+    @ColumnInfo(name = "title") var title: String,
+    @ColumnInfo(name = "note_text") var text: String,
+    @ColumnInfo(name = "base64_image") var image: String,
     var longitude: Double = -1.0,
     var latitude: Double = -1.0,
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
