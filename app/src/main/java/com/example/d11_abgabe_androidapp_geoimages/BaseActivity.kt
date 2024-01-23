@@ -2,11 +2,8 @@ package com.example.d11_abgabe_androidapp_geoimages
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 
 abstract class BaseActivity : AppCompatActivity() {
 
@@ -18,7 +15,7 @@ abstract class BaseActivity : AppCompatActivity() {
         richNoteDao.getAll()
     }
 
-    abstract val  contentView: Int
+    abstract val contentView: Int
     abstract val toolbarID: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
