@@ -8,8 +8,6 @@
     android:orientation="vertical"
     tools:context=".EditFragment">
 
-    <include layout="@layout/toolbar" />
-
     <ImageView
         android:id="@+id/ei_image"
         android:layout_width="match_parent"

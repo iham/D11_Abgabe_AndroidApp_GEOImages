@@ -10,6 +10,7 @@ class ListingFragment : BaseFragment() {
     override val menuItems = listOf(
         R.menu.sort,
         R.menu.add,
+        R.menu.samples,
     )
 
     override fun onResume() {

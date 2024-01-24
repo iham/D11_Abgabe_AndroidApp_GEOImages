@@ -5,13 +5,13 @@ import android.view.MenuItem
 import android.widget.Toast
 
 class DetailFragment : BaseFragment() {
-    override val contentView = R.layout.fragment_edit
+    override val contentView = R.layout.fragment_detail
     override var hasBackButton: Boolean = true
     override var hasNavigation: Boolean = false
 
     override val menuItems = listOf(
         R.menu.edit,
-        R.menu.remove
+        R.menu.remove,
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

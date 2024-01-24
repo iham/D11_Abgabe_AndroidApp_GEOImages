@@ -11,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     // Using https://kotlinlang.org/docs/delegated-properties.html#lazy-properties
-    private val richNoteDao: RichNoteDao by lazy {
+    val richNoteDao: RichNoteDao by lazy {
         RichNotesDB.getInstance(this).richNoteDao
     }
     val richNotes: List<RichNote> by lazy {
@@ -64,6 +64,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             R.id.add -> {
                 Toast.makeText(this, "Add & Edit", Toast.LENGTH_LONG).show()
                 loadFragment(EditFragment())
+                true
+            }
+            R.id.samples -> {
+                Toast.makeText(this, "Samples", Toast.LENGTH_LONG).show()
+                // TODO create Samples
                 true
             }
             android.R.id.home -> {
