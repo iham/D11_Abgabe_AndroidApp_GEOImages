@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -12,21 +11,10 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlin.math.cos
-import kotlin.math.sin
-import kotlin.math.sqrt
-import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
-
-    // Using https://kotlinlang.org/docs/delegated-properties.html#lazy-properties
-    val richNoteDao: RichNoteDao by lazy {
-        RichNotesDB.getInstance(this).richNoteDao
-    }
-    lateinit var richNotes: List<RichNote>
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     var lastKnownLocation: Location? = null
@@ -52,9 +40,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             true
         }
 
-        // notes
-        richNotes = richNoteDao.getAll()
-
         // location
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         if (ActivityCompat.checkSelfPermission(
@@ -76,87 +61,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
-            R.id.add -> {
-                Toast.makeText(this, "Add & Edit", Toast.LENGTH_SHORT).show()
-                loadFragment(EditFragment())
-                true
-            }
-            R.id.delete_samples -> {
-                deleteSampleData(10)
-                true
-            }
-            R.id.delete_all_samples -> {
-                deleteSampleData(-1)
-                true
-            }
-            R.id.add_samples -> {
-                createSampleData(10)
-                true
-            }
-            R.id.add_one_samples -> {
-                createSampleData(1)
-                true
-            }
-            android.R.id.home -> {
-                Toast.makeText(this, "Back", Toast.LENGTH_SHORT).show()
-                supportFragmentManager.popBackStack()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
+//    override fun onResume() {
+//        super.onResume()
+//    }
 
-    }
-
-    private fun createSampleData(amount: Int = 10) {
-        var latLon = LatLng(0.0, 0.0)
-        if(lastKnownLocation != null) {
-            latLon = LatLng(lastKnownLocation!!.latitude, lastKnownLocation!!.longitude)
-        }
-        val sampleLocation = generateRandomLocationInsideRadius(latLon.latitude, latLon.longitude, 1000)
-        repeat (amount) {
-            val richNote = RichNote(
-                "Title $it",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-                "",
-                sampleLocation.longitude,
-                sampleLocation.latitude,
-            )
-            richNoteDao.insertAll(richNote)
-        }
-        richNotes = richNoteDao.getAll()
-        Toast.makeText(this, "$amount Samples created", Toast.LENGTH_SHORT).show()
-    }
-
-    private fun deleteSampleData(amount: Int = 10) {
-        var i = amount
-        if (i == -1) {
-            i = richNotes.size
-        }
-        repeat(i) {
-            richNoteDao.delete(richNotes[it])
-        }
-        richNotes = richNoteDao.getAll()
-        Toast.makeText(this, "$i Samples deleted", Toast.LENGTH_SHORT).show()
-    }
-
-    private fun generateRandomLocationInsideRadius(x0: Double, y0: Double, radius: Int): LatLng {
-        val random = Random.Default
-        // Convert radius from meters to degrees
-        val radiusInDegrees = (radius / 111000f).toDouble()
-        val u = random.nextDouble()
-        val v = random.nextDouble()
-        val w = radiusInDegrees * sqrt(u)
-        val t = 2.0 * Math.PI * v
-        val x = w * cos(t)
-        val y = w * sin(t)
-        // Adjust the x-coordinate for the shrinking of the east-west distances
-        val newX = x / cos(Math.toRadians(y0))
-        val foundLongitude = newX + x0
-        val foundLatitude = y + y0
-        return LatLng(foundLongitude, foundLatitude)
-    }
 
     fun enableHomeButton() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
