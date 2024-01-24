@@ -1,5 +1,6 @@
 package com.example.d11_abgabe_androidapp_geoimages
 
+import android.annotation.SuppressLint
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +15,7 @@ class GridFragment : BaseFragment() {
         R.menu.samples,
     )
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onResume() {
         super.onResume()
         // data connection
@@ -21,6 +23,7 @@ class GridFragment : BaseFragment() {
         recyclerView?.hasFixedSize()
         recyclerView?.layoutManager = StaggeredGridLayoutManager(4, LinearLayoutManager.VERTICAL)
         recyclerView?.adapter = RichNoteGridItemAdapter((activity as MainActivity).richNotes)
+        recyclerView?.adapter?.notifyDataSetChanged()
     }
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {

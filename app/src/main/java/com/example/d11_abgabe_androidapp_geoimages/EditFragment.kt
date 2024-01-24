@@ -18,7 +18,7 @@ class EditFragment : BaseFragment() {
         // enable back button
         (activity as MainActivity).enableHomeButton()
     }
-
+    
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
             // add new RichNote

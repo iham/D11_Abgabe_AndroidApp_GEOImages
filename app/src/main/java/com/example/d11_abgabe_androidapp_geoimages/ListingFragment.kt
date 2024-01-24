@@ -1,5 +1,6 @@
 package com.example.d11_abgabe_androidapp_geoimages
 
+import android.annotation.SuppressLint
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,14 +14,15 @@ class ListingFragment : BaseFragment() {
         R.menu.samples,
     )
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onResume() {
         super.onResume()
         // data connection
         val recyclerView = activity?.findViewById<RecyclerView>(R.id.listing_list)
         recyclerView?.hasFixedSize()
         recyclerView?.layoutManager = LinearLayoutManager(context)
-//        recyclerView?.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
         recyclerView?.adapter = RichNoteListItemAdapter((activity as MainActivity).richNotes)
+        recyclerView?.adapter?.notifyDataSetChanged()
     }
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
