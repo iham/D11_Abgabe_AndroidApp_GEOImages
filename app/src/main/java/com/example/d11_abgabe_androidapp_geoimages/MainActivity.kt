@@ -1,18 +1,11 @@
 package com.example.d11_abgabe_androidapp_geoimages
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.core.view.MenuProvider
-import androidx.core.view.iterator
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -38,7 +31,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         }
 
         // TODO get rich notes
-
         // set listeners for navigation
         // Toast.makeText(this, "richNotes in DB: ${richNotes.size}", Toast.LENGTH_SHORT).show()
     }
@@ -68,7 +60,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     }
     fun loadFragment(fragment: Fragment){
-        val transaction = supportFragmentManager.beginTransaction()
+        supportFragmentManager.beginTransaction()
             .add(fragment, fragment.tag)
             .addToBackStack(fragment.tag)
             .replace(R.id.container,fragment)
