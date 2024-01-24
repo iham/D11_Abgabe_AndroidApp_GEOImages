@@ -46,4 +46,9 @@ dependencies {
     val room_version = "2.6.1"
     implementation("androidx.room:room-ktx:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
+
+    // install Play-Services-Map 2024-01-24
+    implementation ("com.google.android.gms:play-services-maps:17.0.0")
+    implementation ("com.google.android.gms:play-services-location:17.0.0")
+    implementation ("com.google.android.gms:play-services-maps:17.0.0")
 }
