@@ -20,6 +20,7 @@ abstract class BaseFragment : Fragment(), MenuProvider {
     abstract val contentView: Int
     abstract val menuItems: List<Int>
     open var hasNavigation: Boolean = true
+    open var hasBackButton: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,9 @@ abstract class BaseFragment : Fragment(), MenuProvider {
 
     override fun onResume() {
         super.onResume()
+        // enable back button
+        if (hasBackButton) (activity as MainActivity).enableHomeButton() else (activity as MainActivity).disableHomeButton()
+
         // de|activate nav
         val nav = activity?.findViewById<BottomNavigationView>(R.id.navigation)
         nav?.visibility = if (hasNavigation) View.VISIBLE else View.GONE
@@ -50,6 +54,7 @@ abstract class BaseFragment : Fragment(), MenuProvider {
     // inject menu items as defined in menuItems
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
         // Add menu items here
+        menu.clear()
         menuItems.forEach {
             menuInflater.inflate(it, menu)
         }

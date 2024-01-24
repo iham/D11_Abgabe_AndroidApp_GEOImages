@@ -10,7 +10,6 @@ class ListingFragment : BaseFragment() {
         R.menu.sort,
         R.menu.add,
     )
-
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
             R.id.title_asc -> {

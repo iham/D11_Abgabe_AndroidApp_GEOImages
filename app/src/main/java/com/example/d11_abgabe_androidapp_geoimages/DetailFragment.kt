@@ -14,17 +14,16 @@ import androidx.lifecycle.Lifecycle
 
 class DetailFragment : BaseFragment() {
     override val contentView = R.layout.fragment_edit
+    override var hasBackButton: Boolean = true
+    override var hasNavigation: Boolean = false
 
     override val menuItems = listOf(
         R.menu.edit,
         R.menu.remove
     )
-    override var hasNavigation: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // enable back button
-        (activity as MainActivity).enableHomeButton()
     }
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {

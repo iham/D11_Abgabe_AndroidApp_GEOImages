@@ -17,11 +17,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class EditFragment : BaseFragment() {
     override val contentView = R.layout.fragment_edit
+    override var hasBackButton: Boolean = true
+    override var hasNavigation: Boolean = false
 
     override val menuItems = listOf(
         R.menu.save,
     )
-    override var hasNavigation: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

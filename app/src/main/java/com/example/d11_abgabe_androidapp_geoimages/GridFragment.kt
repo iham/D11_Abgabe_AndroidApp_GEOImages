@@ -14,7 +14,6 @@ import androidx.lifecycle.Lifecycle
 
 class GridFragment : BaseFragment() {
     override val contentView = R.layout.fragment_grid
-
     override val menuItems = listOf(
         R.menu.sort,
         R.menu.add,

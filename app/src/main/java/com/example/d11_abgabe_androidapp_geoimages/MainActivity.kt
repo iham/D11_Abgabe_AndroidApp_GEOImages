@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     }
     fun disableHomeButton() {
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
     }
     fun loadFragment(fragment: Fragment){
