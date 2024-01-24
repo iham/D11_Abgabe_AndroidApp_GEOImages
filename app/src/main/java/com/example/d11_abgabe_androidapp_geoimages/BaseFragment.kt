@@ -51,9 +51,10 @@ abstract class BaseFragment : Fragment(), MenuProvider {
         nav?.visibility = if (hasNavigation) View.VISIBLE else View.GONE
 
         // data connection
-        recyclerView = activity?.findViewById<RecyclerView>(R.id.listing)
+        recyclerView = activity?.findViewById<RecyclerView>(R.id.listing_list)
         recyclerView?.hasFixedSize()
         recyclerView?.layoutManager = LinearLayoutManager(context)
+//        recyclerView?.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
         recyclerView?.adapter = RichNoteAdapter(dataset)
 
     }
