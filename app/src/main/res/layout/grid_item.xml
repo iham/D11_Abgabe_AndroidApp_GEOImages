@@ -13,10 +13,29 @@
 
     <TextView
         android:id="@+id/gi_image_title"
+        android:background="@color/black"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@+id/label"
         android:layout_marginTop="3dp"
         android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/gi_node_id"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@+id/note_id"
+        android:layout_marginTop="3dp"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/gi_location"
+        android:layout_width="2dp"
+        android:layout_height="2dp"
+        android:src="@drawable/ic_stat_add_location"
+        android:layout_marginEnd="10dp" />
 
 </LinearLayout>
