@@ -10,7 +10,6 @@ import androidx.room.Query
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.Update
-import androidx.room.Upsert
 
 @Entity(tableName = "rich_notes")
 data class RichNote (
@@ -25,7 +24,7 @@ data class RichNote (
 @Dao
 interface RichNoteDao {
 
-    @Upsert
+    @Insert
     fun insertAll(vararg richNotes:RichNote)
 
     @Update
