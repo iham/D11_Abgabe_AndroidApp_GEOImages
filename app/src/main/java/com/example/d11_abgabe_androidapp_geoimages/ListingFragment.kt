@@ -20,7 +20,7 @@ class ListingFragment : BaseFragment() {
         recyclerView?.hasFixedSize()
         recyclerView?.layoutManager = LinearLayoutManager(context)
 //        recyclerView?.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
-        recyclerView?.adapter = RichNoteListItemAdapter((activity as MainActivity).dataset)
+        recyclerView?.adapter = RichNoteListItemAdapter((activity as MainActivity).richNotes)
     }
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {

@@ -1,13 +1,19 @@
 package com.example.d11_abgabe_androidapp_geoimages
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.location.Location
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -20,6 +26,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    var lastKnownLocation: Location? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,6 +47,25 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 R.id.map -> loadFragment(MapFragment())
             }
             true
+        }
+        // location
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            return
+        }
+        fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
+            // Got last known location. In some rare situations this can be null.
+            if(location != null) {
+                lastKnownLocation = location
+            }
+
         }
     }
 

@@ -20,7 +20,7 @@ class GridFragment : BaseFragment() {
         val recyclerView = activity?.findViewById<RecyclerView>(R.id.grid_list)
         recyclerView?.hasFixedSize()
         recyclerView?.layoutManager = StaggeredGridLayoutManager(4, LinearLayoutManager.VERTICAL)
-        recyclerView?.adapter = RichNoteGridItemAdapter((activity as MainActivity).dataset)
+        recyclerView?.adapter = RichNoteGridItemAdapter((activity as MainActivity).richNotes)
     }
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {

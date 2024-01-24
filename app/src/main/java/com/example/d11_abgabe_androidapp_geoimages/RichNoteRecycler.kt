@@ -26,7 +26,7 @@ class RichNoteListItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemV
 
 }
 
-class RichNoteListItemAdapter(private val dataSet: Array<String>) : RecyclerView.Adapter<RichNoteListItemViewHolder>() {
+class RichNoteListItemAdapter(private val dataSet: List<RichNote>) : RecyclerView.Adapter<RichNoteListItemViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RichNoteListItemViewHolder {
         // Create a new view, which defines the UI of the list item
@@ -38,10 +38,10 @@ class RichNoteListItemAdapter(private val dataSet: Array<String>) : RecyclerView
 
 
     override fun onBindViewHolder(viewHolder: RichNoteListItemViewHolder, position: Int) {
-        viewHolder.liTitle.text = dataSet[position]
-        viewHolder.liText.text = "empty"
-        viewHolder.liLongitude.text = "0000.00000"
-        viewHolder.liLatitude.text = "0000.00000"
+        viewHolder.liTitle.text = dataSet[position].title
+        viewHolder.liText.text = dataSet[position].text
+        viewHolder.liLongitude.text = dataSet[position].longitude.toString()
+        viewHolder.liLatitude.text = dataSet[position].latitude.toString()
         viewHolder.liImage.setImageResource(R.drawable.ic_action_format_list_bulleted)
 
         viewHolder.itemView.setOnClickListener {
@@ -68,7 +68,7 @@ class RichNoteGridItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemV
     }
 
 }
-class RichNoteGridItemAdapter(private val dataSet: Array<String>) : RecyclerView.Adapter<RichNoteGridItemViewHolder>() {
+class RichNoteGridItemAdapter(private val dataSet: List<RichNote>) : RecyclerView.Adapter<RichNoteGridItemViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RichNoteGridItemViewHolder {
         // Create a new view, which defines the UI of the list item
