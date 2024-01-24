@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -18,21 +19,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         richNoteDao.getAll()
     }
 
-    val dataset = arrayOf(
-        "test bla",
-        "test 2",
-        "test 3",
-        "test 4",
-        "test 5",
-        "test 6",
-        "test 7",
-        "test 8",
-        "test 9",
-        "test 10",
-        "test 11",
-        "test 12",
-    )
-
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -53,10 +40,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             }
             true
         }
-
-        // TODO get rich notes
-        // set listeners for navigation
-        // Toast.makeText(this, "richNotes in DB: ${richNotes.size}", Toast.LENGTH_SHORT).show()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

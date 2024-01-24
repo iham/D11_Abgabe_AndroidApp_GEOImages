@@ -48,7 +48,8 @@ dependencies {
     ksp("androidx.room:room-compiler:$room_version")
 
     // install Play-Services-Map 2024-01-24
-    implementation ("com.google.android.gms:play-services-maps:17.0.0")
-    implementation ("com.google.android.gms:play-services-location:17.0.0")
-    implementation ("com.google.android.gms:play-services-maps:17.0.0")
+    val ps_version = "21.1.0"
+    implementation ("com.google.android.gms:play-services-maps:$ps_version")
+    implementation ("com.google.android.gms:play-services-location:$ps_version")
+    implementation ("com.google.android.gms:play-services-maps:$ps_version")
 }
