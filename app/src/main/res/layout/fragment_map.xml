@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:text="Map" />
+        android:text="FRAGMENT Map" />
 
 </FrameLayout>

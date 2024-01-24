@@ -20,7 +20,6 @@ abstract class BaseFragment : Fragment(), MenuProvider {
     abstract val contentView: Int
     abstract val menuItems: List<Int>
     open var hasNavigation: Boolean = true
-    // var hasHomeInToolbar: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +31,7 @@ abstract class BaseFragment : Fragment(), MenuProvider {
         val nav = activity?.findViewById<BottomNavigationView>(R.id.navigation)
         nav?.visibility = if (hasNavigation) View.VISIBLE else View.GONE
     }
+
     // setting Fragment View Template
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
