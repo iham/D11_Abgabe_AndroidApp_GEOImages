@@ -45,7 +45,7 @@
         android:layout_gravity="start"
         android:text="@string/longitude"
         android:hint="@string/hint_longitude"
-        style="@style/EditItem.Position"/>
+        style="@style/EditItem.Location"/>
 
     <EditText
         android:id="@+id/ei_latitude"
@@ -55,6 +55,6 @@
         android:layout_gravity="start"
         android:text="@string/latitude"
         android:hint="@string/hint_latitude"
-        style="@style/EditItem.Position"/>
+        style="@style/EditItem.Location"/>
 
 </LinearLayout>
