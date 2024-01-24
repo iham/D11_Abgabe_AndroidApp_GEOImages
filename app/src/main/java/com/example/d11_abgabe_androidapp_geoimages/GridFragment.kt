@@ -1,16 +1,10 @@
 package com.example.d11_abgabe_androidapp_geoimages
 
-import android.content.Intent
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
-import androidx.lifecycle.Lifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class GridFragment : BaseFragment() {
     override val contentView = R.layout.fragment_grid
@@ -19,6 +13,14 @@ class GridFragment : BaseFragment() {
         R.menu.add,
     )
 
+    override fun onResume() {
+        super.onResume()
+        // data connection
+        val recyclerView = activity?.findViewById<RecyclerView>(R.id.grid_list)
+        recyclerView?.hasFixedSize()
+        recyclerView?.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
+        recyclerView?.adapter = RichNoteGridItemAdapter((activity as MainActivity).dataset)
+    }
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
             // sorting

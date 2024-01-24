@@ -5,11 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 
-class RichNoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class RichNoteListItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var liTitle: TextView
     var liText: TextView
     var liImage: ImageView
@@ -27,18 +26,18 @@ class RichNoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 }
 
-class RichNoteAdapter(private val dataSet: Array<String>) : RecyclerView.Adapter<RichNoteViewHolder>() {
+class RichNoteListItemAdapter(private val dataSet: Array<String>) : RecyclerView.Adapter<RichNoteListItemViewHolder>() {
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RichNoteViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RichNoteListItemViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.list_item, viewGroup, false)
 
-        return RichNoteViewHolder(view)
+        return RichNoteListItemViewHolder(view)
     }
 
 
-    override fun onBindViewHolder(viewHolder: RichNoteViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: RichNoteListItemViewHolder, position: Int) {
         viewHolder.liTitle.text = dataSet[position]
         viewHolder.liText.text = "empty"
         viewHolder.liLongitude.text = "0000.00000"
@@ -46,7 +45,48 @@ class RichNoteAdapter(private val dataSet: Array<String>) : RecyclerView.Adapter
         viewHolder.liImage.setImageResource(R.drawable.ic_action_format_list_bulleted)
 
         viewHolder.itemView.setOnClickListener {
-            Toast.makeText(it.context, "clicked item $position", Toast.LENGTH_SHORT).show()
+            (it.context as MainActivity).loadFragment(DetailFragment())
+        }
+    }
+
+    override fun getItemCount() = dataSet.size
+}
+
+class RichNoteGridItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+//    var giTitle: TextView
+//    var giText: TextView
+    var giImage: ImageView
+//    var giLongitude: TextView
+//    var giLatitude: TextView
+
+    init {
+//        giTitle = itemView.findViewById<TextView>(R.id.gi_title)
+//        giText = itemView.findViewById<TextView>(R.id.gi_text)
+        giImage = itemView.findViewById<ImageView>(R.id.gi_image)
+//        giLongitude = itemView.findViewById<TextView>(R.id.gi_longitude)
+//        giLatitude = itemView.findViewById<TextView>(R.id.gi_latitude)
+    }
+
+}
+class RichNoteGridItemAdapter(private val dataSet: Array<String>) : RecyclerView.Adapter<RichNoteGridItemViewHolder>() {
+
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RichNoteGridItemViewHolder {
+        // Create a new view, which defines the UI of the list item
+        val view = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.grid_item, viewGroup, false)
+
+        return RichNoteGridItemViewHolder(view)
+    }
+
+
+    override fun onBindViewHolder(viewHolder: RichNoteGridItemViewHolder, position: Int) {
+//        viewHolder.giTitle.text = dataSet[position]
+//        viewHolder.giText.text = "empty"
+//        viewHolder.giLongitude.text = "0000.00000"
+//        viewHolder.giLatitude.text = "0000.00000"
+        viewHolder.giImage.setImageResource(R.drawable.ic_action_format_list_bulleted)
+
+        viewHolder.itemView.setOnClickListener {
             (it.context as MainActivity).loadFragment(DetailFragment())
         }
     }
