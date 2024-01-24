@@ -7,6 +7,9 @@
         android:title="Samples"
         app:showAsAction="ifRoom">
         <menu>
+            <item android:id="@+id/add_one_samples"
+                android:icon="@drawable/ic_action_add_circle_outline"
+                android:title="Add A Sample" />
             <item android:id="@+id/add_samples"
                 android:icon="@drawable/ic_action_add_circle_outline"
                 android:title="Add Samples (10)" />

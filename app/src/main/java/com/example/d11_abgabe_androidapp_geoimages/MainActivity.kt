@@ -95,7 +95,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 createSampleData(10)
                 true
             }
-
+            R.id.add_one_samples -> {
+                createSampleData(1)
+                true
+            }
             android.R.id.home -> {
                 Toast.makeText(this, "Back", Toast.LENGTH_SHORT).show()
                 supportFragmentManager.popBackStack()
