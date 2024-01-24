@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         // enable toolbar
         setSupportActionBar(findViewById(R.id.toolbar))
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_action_arrow_back)
 
         // load the content to fragment container
         loadFragment(ListingFragment())
@@ -35,16 +36,43 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             }
             true
         }
+
         // TODO get rich notes
 
         // set listeners for navigation
         // Toast.makeText(this, "richNotes in DB: ${richNotes.size}", Toast.LENGTH_SHORT).show()
     }
 
-    private fun loadFragment(fragment: Fragment){
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.add -> {
+                Toast.makeText(this, "Add & Edit", Toast.LENGTH_LONG).show()
+                loadFragment(EditFragment())
+                true
+            }
+            android.R.id.home -> {
+                Toast.makeText(this, "Back", Toast.LENGTH_LONG).show()
+                supportFragmentManager.popBackStack()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
+    }
+    fun enableHomeButton() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+    }
+    fun disableHomeButton() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+    }
+    fun loadFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container,fragment)
-        transaction.commit()
+            .add(fragment, fragment.tag)
+            .addToBackStack(fragment.tag)
+            .replace(R.id.container,fragment)
+            .commit()
     }
 
 }

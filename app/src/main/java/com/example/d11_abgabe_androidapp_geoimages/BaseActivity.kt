@@ -23,18 +23,6 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(contentView)
 
-        setSupportActionBar(findViewById(R.id.toolbar))
-
-        // set listeners for navigation
-        val nav = findViewById<BottomNavigationView>(R.id.navigation)
-        nav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.list -> startActivity(Intent(this, ListActivity::class.java))
-                R.id.grid -> startActivity(Intent(this, GridActivity::class.java))
-                R.id.map -> startActivity(Intent(this, MapActivity::class.java))
-            }
-            true
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

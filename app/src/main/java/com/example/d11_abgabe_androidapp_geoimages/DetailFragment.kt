@@ -12,19 +12,33 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
 
-class GridFragment : BaseFragment() {
-    override val contentView = R.layout.fragment_grid
+class DetailFragment : BaseFragment() {
+    override val contentView = R.layout.fragment_edit
 
     override val menuItems = listOf(
-        R.menu.sort,
-        R.menu.add,
+        R.menu.edit,
+        R.menu.remove
     )
+    override var hasNavigation: Boolean = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // enable back button
+        (activity as MainActivity).enableHomeButton()
+    }
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
-            // sorting
-            R.id.title_asc -> {
-                Toast.makeText(activity, "sort title ASC", Toast.LENGTH_LONG).show()
+            // add new RichNote
+            R.id.edit -> {
+                Toast.makeText(activity, "Add & Editing", Toast.LENGTH_LONG).show()
+                (activity as MainActivity).loadFragment(EditFragment())
+                true
+            }
+            // remove
+            R.id.remove -> {
+                Toast.makeText(activity, "Delete", Toast.LENGTH_LONG).show()
+                // TODO implement alert dialog and deleting
                 true
             }
             R.id.title_desc -> {

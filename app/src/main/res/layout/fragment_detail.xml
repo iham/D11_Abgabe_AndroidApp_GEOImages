@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListActivity">
+    tools:context=".DetailFragment">
 
     <include layout="@layout/toolbar" />
 
@@ -14,8 +14,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:text="Map" />
-
-    <include layout="@layout/navigation" />
+        android:text="Detail" />
 
 </FrameLayout>

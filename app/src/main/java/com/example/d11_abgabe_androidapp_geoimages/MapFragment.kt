@@ -1,31 +1,28 @@
 package com.example.d11_abgabe_androidapp_geoimages
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
+import androidx.lifecycle.Lifecycle
 
-class MapFragment : Fragment() {
+class MapFragment : BaseFragment() {
+    override val contentView = R.layout.fragment_map
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    override val menuItems = listOf(
+        R.menu.add,
+    )
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map, container, false)
-    }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance() =
-            MapFragment().apply {
-                arguments = Bundle().apply {}
-            }
+    override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+        return when (menuItem.itemId) {
+            else -> super.onOptionsItemSelected(menuItem)
+        }
     }
 }
+

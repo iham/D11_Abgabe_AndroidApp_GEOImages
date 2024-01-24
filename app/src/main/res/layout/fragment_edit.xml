@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditFragment">
+
+    <include layout="@layout/toolbar" />
+
+    <ImageView
+        android:id="@+id/ei_image"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:contentDescription="@string/my_image_description"
+        android:src="@drawable/ic_launcher_background"
+        android:textAlignment="textStart" />
+
+    <EditText
+        android:id="@+id/ei_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textAutoCorrect"
+        android:text="@string/title"
+        android:hint="@string/hint_title"
+        style="@style/EditItem.Title" />
+
+    <EditText
+        android:id="@+id/ei_text"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:inputType="textMultiLine"
+        android:layout_gravity="start"
+        android:text="@string/text"
+        android:hint="@string/hint_text"
+        style="@style/EditItem.Text"/>
+
+    <EditText
+        android:id="@+id/ei_longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_gravity="start"
+        android:text="@string/longitude"
+        android:hint="@string/hint_longitude"
+        style="@style/EditItem.Position"/>
+
+    <EditText
+        android:id="@+id/ei_latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_gravity="start"
+        android:text="@string/latitude"
+        android:hint="@string/hint_latitude"
+        style="@style/EditItem.Position"/>
+
+</LinearLayout>
