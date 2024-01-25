@@ -36,14 +36,6 @@ class EditFragment : BaseFragment() {
                     .placeholder(R.drawable.ic_action_image_search)
                     .into(view?.findViewById<ImageView>(R.id.e_image))
             }
-            else {
-                Picasso.get()
-                    .load(R.drawable.ic_action_image_search)
-                    .fit()
-                    .centerInside()
-                    .placeholder(R.drawable.ic_action_image_search)
-                    .into(view?.findViewById<ImageView>(R.id.e_image))
-            }
 
             view?.findViewById<EditText>(R.id.e_longitude)?.setText(
                 note.longitude.toString() ?: "0.0"
