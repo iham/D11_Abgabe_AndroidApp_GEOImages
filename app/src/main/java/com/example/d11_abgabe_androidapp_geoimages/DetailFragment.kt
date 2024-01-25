@@ -16,13 +16,22 @@ class DetailFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        Toast.makeText(context, "create detail note: ${(activity as MainActivity).selectedRichNoteID}", Toast.LENGTH_SHORT).show()
     }
 
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(context, "resume detail", Toast.LENGTH_SHORT).show()
+        // fill data into fields
+        if((activity as MainActivity).selectedRichNote != null) {
+//            find
+        }
+    }
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
             // add new RichNote
             R.id.edit -> {
-                Toast.makeText(activity, "Add & Editing", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, "Editing", Toast.LENGTH_LONG).show()
                 (activity as MainActivity).loadFragment(EditFragment())
                 true
             }
@@ -30,12 +39,6 @@ class DetailFragment : BaseFragment() {
             R.id.remove -> {
                 Toast.makeText(activity, "Delete", Toast.LENGTH_LONG).show()
                 (activity as MainActivity).showDeleteDialog()
-                // TODO change sort order in listing
-                true
-            }
-            R.id.title_desc -> {
-                Toast.makeText(activity, "sort title DESC", Toast.LENGTH_LONG).show()
-                // TODO change sort order in listing
                 true
             }
             else -> super.onOptionsItemSelected(menuItem)

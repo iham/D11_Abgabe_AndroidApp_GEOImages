@@ -17,8 +17,17 @@ class EditFragment : BaseFragment() {
         super.onCreate(savedInstanceState)
         // enable back button
         (activity as MainActivity).enableHomeButton()
+        // grab item
+        Toast.makeText(context, "create edit/add note: ${(activity as MainActivity).selectedRichNote}", Toast.LENGTH_SHORT).show()
+
     }
-    
+
+//    override fun onResume() {
+//        super.onResume()
+//        Toast.makeText(context, "resume edit/add", Toast.LENGTH_SHORT).show()
+//
+//    }
+
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
             // add new RichNote
