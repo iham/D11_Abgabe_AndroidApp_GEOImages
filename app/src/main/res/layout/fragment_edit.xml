@@ -29,7 +29,7 @@
         android:id="@+id/e_image_url"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/e_title"

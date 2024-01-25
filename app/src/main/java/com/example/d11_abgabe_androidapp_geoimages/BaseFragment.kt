@@ -94,7 +94,6 @@ abstract class BaseFragment : Fragment(), MenuProvider {
                 true
             }
             android.R.id.home -> {
-                Toast.makeText(context, "Back", Toast.LENGTH_SHORT).show()
                 (activity as MainActivity).selectedRichNote = null
                 activity?.supportFragmentManager?.popBackStack()
                 true

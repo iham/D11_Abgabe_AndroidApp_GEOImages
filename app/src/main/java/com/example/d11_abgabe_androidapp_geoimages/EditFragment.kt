@@ -6,6 +6,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import com.squareup.picasso.Picasso
+import kotlin.random.Random
 
 class EditFragment : BaseFragment() {
     override val contentView = R.layout.fragment_edit
@@ -46,12 +47,30 @@ class EditFragment : BaseFragment() {
             view?.findViewById<EditText>(R.id.e_text)?.setText(note.text)
         }
         else {
+            view?.findViewById<EditText>(R.id.e_longitude)?.setText(
+                (activity as MainActivity).lastKnownLocation?.longitude.toString() ?: "0.0"
+            )
+            view?.findViewById<EditText>(R.id.e_latitude)?.setText(
+                (activity as MainActivity).lastKnownLocation?.latitude.toString() ?: "0.0"
+            )
             Picasso.get()
                 .load(R.drawable.ic_action_image_search)
                 .fit()
                 .centerInside()
                 .placeholder(R.drawable.ic_action_image_search)
                 .into(view?.findViewById<ImageView>(R.id.e_image))
+        }
+        view?.findViewById<ImageView>(R.id.e_image)?.setOnClickListener {
+            // pic random image
+            val img = IMAGE_URIS[Random.nextInt(IMAGE_URIS.size)]
+            view?.findViewById<EditText>(R.id.e_image_url)?.setText(img)
+            Picasso.get()
+                .load(img)
+                .fit()
+                .centerInside()
+                .placeholder(R.drawable.ic_action_image_search)
+                .into(view?.findViewById<ImageView>(R.id.e_image))
+
         }
     }
 
