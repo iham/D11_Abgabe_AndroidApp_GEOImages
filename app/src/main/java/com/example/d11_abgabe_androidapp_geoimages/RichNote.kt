@@ -5,27 +5,27 @@ import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.Delete
 import androidx.room.Entity
+import androidx.room.Insert
 import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.Update
-import androidx.room.Upsert
 
 @Entity(tableName = "rich_notes")
 data class RichNote (
     var title: String,
     var text: String = "",
     var image: String = "",
-    var longitude: Double = -1.0,
-    var latitude: Double = -1.0,
+    var longitude: Double = 0.0,
+    var latitude: Double = 0.0,
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
 )
 
 @Dao
 interface RichNoteDao {
 
-    @Upsert
+    @Insert
     fun insertAll(vararg richNotes:RichNote)
 
     @Update

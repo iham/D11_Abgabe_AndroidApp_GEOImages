@@ -9,7 +9,7 @@
     tools:context=".EditFragment">
 
     <TextView
-        android:id="@+id/li_id"
+        android:id="@+id/e_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -17,7 +17,7 @@
         style="@style/EditItem.Header"/>
 
     <ImageView
-        android:id="@+id/ei_image"
+        android:id="@+id/e_image"
         android:layout_width="380dp"
         android:layout_height="380dp"
         android:contentDescription="@string/my_image_description"
@@ -26,7 +26,7 @@
         style="@style/EditItem.Image"/>
 
     <EditText
-        android:id="@+id/ei_title"
+        android:id="@+id/e_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textAutoCorrect"
@@ -35,7 +35,7 @@
         style="@style/EditItem.Title" />
 
     <EditText
-        android:id="@+id/ei_text"
+        android:id="@+id/e_text"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:inputType="textMultiLine"
@@ -45,7 +45,7 @@
         style="@style/EditItem.Text"/>
 
     <EditText
-        android:id="@+id/ei_longitude"
+        android:id="@+id/e_longitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
@@ -54,7 +54,7 @@
         style="@style/EditItem.Location"/>
 
     <EditText
-        android:id="@+id/ei_latitude"
+        android:id="@+id/e_latitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"

@@ -2,6 +2,7 @@ package com.example.d11_abgabe_androidapp_geoimages
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 
 class DetailFragment : BaseFragment() {
@@ -21,10 +22,17 @@ class DetailFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        Toast.makeText(context, "resume detail", Toast.LENGTH_SHORT).show()
         // fill data into fields
-        if((activity as MainActivity).selectedRichNote != null) {
-//            find
+        val note = (activity as MainActivity).selectedRichNote
+        if(note != null) {
+            view?.findViewById<TextView>(R.id.d_title)?.text = note.title
+            view?.findViewById<TextView>(R.id.d_longitude)?.text = note.longitude.toString()
+            view?.findViewById<TextView>(R.id.d_latitude)?.text = note.latitude.toString()
+            view?.findViewById<TextView>(R.id.d_text)?.text = note.text
+//            if (note.image != "") {
+//                view?.findViewById<ImageView>(R.id.d_image)?.setImageDrawable(note.image)
+//            }
+
         }
     }
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
