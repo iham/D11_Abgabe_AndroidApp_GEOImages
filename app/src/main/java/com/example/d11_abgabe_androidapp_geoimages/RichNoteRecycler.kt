@@ -46,6 +46,8 @@ class RichNoteListItemAdapter(private val dataSet: List<RichNote>) : RecyclerVie
 //        viewHolder.liImage.setImageResource(R.drawable.ic_action_format_list_bulleted)
         Picasso.get()
             .load(dataSet[position].image)
+            .fit()
+            .centerInside()
             .error(R.drawable.ic_action_image_search)
             .into(viewHolder.liImage)
 
@@ -92,6 +94,8 @@ class RichNoteGridItemAdapter(private val dataSet: List<RichNote>) : RecyclerVie
 //        viewHolder.giLatitude.text = "0000.00000"
         Picasso.get()
             .load(dataSet[position].image)
+            .fit()
+            .centerInside()
             .error(R.drawable.ic_action_image_search)
             .into(viewHolder.giImage)
 

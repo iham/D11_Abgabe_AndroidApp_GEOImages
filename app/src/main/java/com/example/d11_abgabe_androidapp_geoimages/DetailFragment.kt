@@ -33,6 +33,8 @@ class DetailFragment : BaseFragment() {
             view?.findViewById<TextView>(R.id.d_text)?.text = note.text
             Picasso.get()
                 .load(note.image)
+                .fit()
+                .centerInside()
                 .error(R.drawable.ic_action_image_search)
                 .into(view?.findViewById<ImageView>(R.id.d_image))
 
