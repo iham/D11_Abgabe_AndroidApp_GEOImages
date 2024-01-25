@@ -44,7 +44,7 @@
                     android:paddingRight="@dimen/margin_small"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_add_location"
-                    android:contentDescription="@string/my_image_description"/>
+                    android:contentDescription="@string/click_for_update"/>
 
                 <TextView
                     android:id="@+id/li_longitude"
