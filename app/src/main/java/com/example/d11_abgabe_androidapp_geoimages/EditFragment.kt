@@ -35,7 +35,7 @@ class EditFragment : BaseFragment() {
         view?.findViewById<EditText>(R.id.e_text)?.setText(note?.text)
         Picasso.get()
             .load(note?.image)
-            .error(R.drawable.ic_action_image_search)
+            .placeholder(R.drawable.ic_action_image_search)
             .into(view?.findViewById<ImageView>(R.id.e_image))
 
     }
