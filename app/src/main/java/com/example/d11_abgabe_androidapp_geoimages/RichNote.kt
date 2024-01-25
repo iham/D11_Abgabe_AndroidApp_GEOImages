@@ -12,6 +12,24 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.Update
 
+val IMAGE_URIS =  listOf(
+    "https://i.imgur.com/1yRc8rL.jpeg",
+    "https://i.imgur.com/8yzreIR.jpeg",
+    "https://i.imgur.com/i1VhiuX.jpeg",
+    "https://i.imgur.com/jrfqvzD.jpeg",
+    "https://i.imgur.com/5QIU2J1.jpeg",
+    "https://i.imgur.com/UwRQQvw.jpeg",
+    "https://i.imgur.com/P11s7Qi.jpeg",
+    "https://i.imgur.com/iLA75bA.jpeg",
+    "https://i.imgur.com/id7mAhR.jpeg",
+    "https://i.imgur.com/fgUXGBu.jpeg",
+    "https://i.imgur.com/W5m0n6a.jpeg",
+    "https://i.imgur.com/SnkZah7.jpeg",
+    "https://i.imgur.com/4svTnPf.jpeg",
+    "https://i.imgur.com/gvqaZrW.jpeg",
+    "https://i.imgur.com/70V0dhK.jpeg",
+)
+
 @Entity(tableName = "rich_notes")
 data class RichNote (
     var title: String,
