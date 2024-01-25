@@ -30,7 +30,6 @@ class DetailFragment : BaseFragment() {
             R.id.remove -> {
                 Toast.makeText(activity, "Delete", Toast.LENGTH_LONG).show()
                 (activity as MainActivity).showDeleteDialog()
-                // TODO change sort order in listing
                 true
             }
             R.id.title_desc -> {

@@ -21,7 +21,7 @@ class ListingFragment : BaseFragment() {
         val recyclerView = activity?.findViewById<RecyclerView>(R.id.listing_list)
         recyclerView?.hasFixedSize()
         recyclerView?.layoutManager = LinearLayoutManager(context)
-        recyclerView?.adapter = RichNoteListItemAdapter(richNotes)
+        recyclerView?.adapter = RichNoteListItemAdapter((activity as MainActivity).richNotes)
         recyclerView?.adapter?.notifyDataSetChanged()
     }
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
