@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="192dp"
     android:orientation="vertical">
-
-    <ImageView
-        android:id="@+id/gi_image"
-        android:layout_width="match_parent"
-        android:layout_height="360dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/gi_title"
@@ -20,32 +13,14 @@
         android:layout_height="wrap_content"
         android:background="@color/black"
         android:text="@+id/gi_title"
-        android:textColor="@color/purple_700"
-        android:textSize="15sp"
-        app:layout_constraintTop_toTopOf="@+id/gi_image" />
+        android:textColor="@color/purple_200"
+        android:textSize="12sp"/>
 
     <ImageView
-        android:id="@+id/gi_location"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="374dp"
-        android:src="@drawable/ic_add_location"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gi_title" />
+        android:id="@+id/gi_image"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/gray"
+        android:scaleType="centerCrop" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="391dp" />
-
-    <androidx.constraintlayout.helper.widget.Layer
-        android:id="@+id/layer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="gi_title" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
