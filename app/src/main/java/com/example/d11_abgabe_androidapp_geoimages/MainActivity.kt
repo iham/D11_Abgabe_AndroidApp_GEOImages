@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         // load the content to fragment container
         loadFragment(ListingFragment())
-//        loadFragment(GridFragment())
 
         // navigation
         val nav = findViewById<BottomNavigationView>(R.id.navigation)
@@ -139,7 +138,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     fun deleteSampleData(amount: Int = 10) {
         var i = amount
-        if (i == -1) {
+        if (i == -1 || i > richNotes.size) {
             i = richNotes.size
         }
         repeat(i) {

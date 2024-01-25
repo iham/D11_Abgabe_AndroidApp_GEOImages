@@ -25,9 +25,6 @@ abstract class BaseFragment : Fragment(), MenuProvider {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         (activity as MainActivity).richNotes = (activity as MainActivity).richNoteDao.getAll()
-//        if ((activity as MainActivity).selectedRichNote != null) {
-//            Toas
-//        }
     }
 
     override fun onResume() {

@@ -31,12 +31,24 @@ class DetailFragment : BaseFragment() {
             view?.findViewById<TextView>(R.id.d_longitude)?.text = note.longitude.toString()
             view?.findViewById<TextView>(R.id.d_latitude)?.text = note.latitude.toString()
             view?.findViewById<TextView>(R.id.d_text)?.text = note.text
-            Picasso.get()
-                .load(note.image)
-                .fit()
-                .centerInside()
-                .error(R.drawable.ic_action_image_search)
-                .into(view?.findViewById<ImageView>(R.id.d_image))
+            if (note.image != "") {
+                Picasso.get()
+                    .load(note.image)
+                    .fit()
+                    .centerInside()
+                    .error(R.drawable.ic_action_image_search)
+                    .into(view?.findViewById<ImageView>(R.id.d_image))
+            }
+            else {
+                Picasso.get()
+                    .load(R.drawable.ic_action_image_search)
+                    .fit()
+                    .centerInside()
+                    .placeholder(R.drawable.ic_action_image_search)
+                    .error(R.drawable.ic_action_image_search)
+                    .into(view?.findViewById<ImageView>(R.id.d_image))
+
+            }
 
         }
     }

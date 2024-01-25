@@ -43,13 +43,23 @@ class RichNoteListItemAdapter(private val dataSet: List<RichNote>) : RecyclerVie
         viewHolder.liText.text = dataSet[position].text
         viewHolder.liLongitude.text = dataSet[position].longitude.toString()
         viewHolder.liLatitude.text = dataSet[position].latitude.toString()
-//        viewHolder.liImage.setImageResource(R.drawable.ic_action_format_list_bulleted)
-        Picasso.get()
-            .load(dataSet[position].image)
-            .fit()
-            .centerInside()
-            .error(R.drawable.ic_action_image_search)
-            .into(viewHolder.liImage)
+        if(dataSet[position].image != "") {
+            Picasso.get()
+                .load(dataSet[position].image)
+                .fit()
+                .centerInside()
+                .error(R.drawable.ic_action_image_search)
+                .into(viewHolder.liImage)
+        }
+        else {
+            Picasso.get()
+                .load(R.drawable.ic_action_image_search)
+                .fit()
+                .centerInside()
+                .error(R.drawable.ic_action_image_search)
+                .into(viewHolder.liImage)
+        }
+
 
         viewHolder.itemView.setOnClickListener {
             (it.context as MainActivity).selectedRichNote = dataSet[position]
@@ -92,15 +102,22 @@ class RichNoteGridItemAdapter(private val dataSet: List<RichNote>) : RecyclerVie
 //        viewHolder.giText.text = "empty"
 //        viewHolder.giLongitude.text = "0000.00000"
 //        viewHolder.giLatitude.text = "0000.00000"
-        Picasso.get()
-            .load(dataSet[position].image)
-            .fit()
-            .centerInside()
-            .error(R.drawable.ic_action_image_search)
-            .into(viewHolder.giImage)
-
-//        viewHolder.giImage.setImageResource(R.drawable.ic_action_format_list_bulleted)
-
+        if(dataSet[position].image != "") {
+            Picasso.get()
+                .load(dataSet[position].image)
+                .fit()
+                .centerInside()
+                .error(R.drawable.ic_action_image_search)
+                .into(viewHolder.giImage)
+        }
+        else {
+            Picasso.get()
+                .load(R.drawable.ic_action_image_search)
+                .fit()
+                .centerInside()
+                .error(R.drawable.ic_action_image_search)
+                .into(viewHolder.giImage)
+        }
 
         viewHolder.itemView.setOnClickListener {
             (it.context as MainActivity).selectedRichNote = dataSet[position]
