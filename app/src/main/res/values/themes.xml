@@ -86,10 +86,6 @@
         <style name="DetailItem.Location">
             <item name="android:textSize">16sp</item>
             <item name="android:textStyle">normal</item>
-            <item name="android:layout_marginStart">0dp</item>
-            <item name="android:layout_marginEnd">0dp</item>
-            <item name="android:layout_marginTop">0dp</item>
-            <item name="android:layout_marginBottom">0dp</item>
             <item name="android:textColor">@color/black</item>
         </style>
          <style name="ListItem">
