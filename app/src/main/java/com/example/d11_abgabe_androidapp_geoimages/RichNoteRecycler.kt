@@ -71,14 +71,14 @@ class RichNoteListItemAdapter(private val dataSet: List<RichNote>) : RecyclerVie
 }
 
 class RichNoteGridItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//    var giTitle: TextView
+    var giTitle: TextView
 //    var giText: TextView
     var giImage: ImageView
 //    var giLongitude: TextView
 //    var giLatitude: TextView
 
     init {
-//        giTitle = itemView.findViewById<TextView>(R.id.gi_title)
+        giTitle = itemView.findViewById<TextView>(R.id.gi_title)
 //        giText = itemView.findViewById<TextView>(R.id.gi_text)
         giImage = itemView.findViewById<ImageView>(R.id.gi_image)
 //        giLongitude = itemView.findViewById<TextView>(R.id.gi_longitude)
@@ -98,7 +98,7 @@ class RichNoteGridItemAdapter(private val dataSet: List<RichNote>) : RecyclerVie
 
 
     override fun onBindViewHolder(viewHolder: RichNoteGridItemViewHolder, position: Int) {
-//        viewHolder.giTitle.text = dataSet[position]
+        viewHolder.giTitle.text = dataSet[position].title
 //        viewHolder.giText.text = "empty"
 //        viewHolder.giLongitude.text = "0000.00000"
 //        viewHolder.giLatitude.text = "0000.00000"
