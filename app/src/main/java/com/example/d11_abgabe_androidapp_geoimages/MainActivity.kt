@@ -82,11 +82,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         richNotes = richNoteDao.getAll()
     }
 
-
     fun enableHomeButton() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     }
+
     fun disableHomeButton() {
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
@@ -97,6 +97,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             .setPositiveButton(getString(R.string.yes)) { dialog, which ->
                 Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show()
                 // TODO IHAM delete from DB
+//                richNoteDao.delete(richNotes.last())
                 // and move back to last page as item doesn't exist anymore
                 supportFragmentManager.popBackStack()
             }
