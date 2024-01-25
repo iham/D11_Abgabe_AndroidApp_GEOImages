@@ -12,14 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:text="FRAGMENT Map"
+        android:text="@string/fragment_map"
         style="@style/ListItem.Text"/>
 
     <ImageView
         android:id="@+id/i_map_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="Static Map"
+        android:contentDescription="@string/static_map"
         android:forceDarkAllowed="false"
         android:src="@drawable/map_static" />
 

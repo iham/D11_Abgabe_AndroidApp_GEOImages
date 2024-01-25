@@ -22,4 +22,9 @@
     <string name="my_image_description">Image Description</string>
     <string name="hint_longitude">"Longitude "</string>
     <string name="hint_latitude">Latitude</string>
+    <string name="fragment_detail">FRAGMENT Detail</string>
+    <string name="fragment_edit">FRAGMENT Edit</string>
+    <string name="fragment_map">FRAGMENT Map</string>
+    <string name="static_map">Static Map</string>
+    <string name="click_for_update">Click for Update</string>
 </resources>

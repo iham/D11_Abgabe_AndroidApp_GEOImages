@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name" translatable="false">D11 GEOImages</string>
-    <string name="list" translatable="true">lListe (sortierbar)</string>
-    <string name="hint_title">Note Titel</string>
+    <string name="app_name" translatable="false">RichNote</string>
+    <string name="list" translatable="true">Liste (sortierbar)</string>
+    <string name="hint_title">Notiz Titel</string>
     <string name="hint_text">Note Information</string>
     <string name="add">Einfügen</string>
     <string name="save">Sichern</string>
@@ -15,11 +15,16 @@
     <string name="note_deleted">Rich-Note gelöscht</string>
     <string name="delete_message">Do you really want to delete this note?</string>
     <string name="image">Foto</string>
-    <string name="text">Note Text</string>
+    <string name="text">Notiz Text</string>
     <string name="longitude">Longitude</string>
     <string name="latitude">Latitude</string>
     <string name="title">Titel</string>
     <string name="my_image_description">Foto Beschreibung</string>
     <string name="hint_longitude">"Longitude "</string>
     <string name="hint_latitude">Latitude</string>
+    <string name="fragment_detail">FRAGMENT Detailinfo</string>
+    <string name="fragment_edit">FRAGMENT Bearbeiten</string>
+    <string name="fragment_map">FRAGMENT Map</string>
+    <string name="static_map">Static Map</string>
+    <string name="click_for_update">Click for Update</string>
 </resources>
