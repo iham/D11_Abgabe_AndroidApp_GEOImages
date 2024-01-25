@@ -8,20 +8,29 @@
     android:orientation="vertical"
     tools:context=".EditFragment">
 
+    <TextView
+        android:id="@+id/li_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="FRAGMENT Edit"
+        style="@style/EditItem.Header"/>
+
     <ImageView
         android:id="@+id/ei_image"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_width="380dp"
+        android:layout_height="380dp"
         android:contentDescription="@string/my_image_description"
         android:src="@drawable/ic_launcher_background"
-        android:textAlignment="textStart" />
+        android:textAlignment="textStart"
+        style="@style/EditItem.Image"/>
 
     <EditText
         android:id="@+id/ei_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textAutoCorrect"
-        android:text="@string/title"
+        android:text=""
         android:hint="@string/hint_title"
         style="@style/EditItem.Title" />
 
@@ -31,7 +40,7 @@
         android:layout_height="120dp"
         android:inputType="textMultiLine"
         android:layout_gravity="start"
-        android:text="@string/text"
+        android:text=""
         android:hint="@string/hint_text"
         style="@style/EditItem.Text"/>
 
@@ -41,7 +50,6 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:layout_gravity="start"
-        android:text="@string/longitude"
         android:hint="@string/hint_longitude"
         style="@style/EditItem.Location"/>
 
@@ -51,7 +59,6 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:layout_gravity="start"
-        android:text="@string/latitude"
         android:hint="@string/hint_latitude"
         style="@style/EditItem.Location"/>
 

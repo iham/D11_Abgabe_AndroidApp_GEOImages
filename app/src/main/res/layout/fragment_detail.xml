@@ -1,17 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".DetailFragment">
 
     <TextView
+        android:id="@+id/li_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:textAlignment="center"
-        android:text="FRAGMENT Detail" />
+        android:text="FRAGMENT Detail"
+        style="@style/DetailItem.Header"/>
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/li_image"
+        android:layout_width="380dp"
+        android:layout_height="380dp"
+        android:contentDescription="@string/my_image_description"
+        android:src="@drawable/ic_launcher_background"
+        android:textAlignment="textStart"
+        style="@style/DetailItem.Image"/>
+
+    <TextView
+        android:id="@+id/li_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_title"
+        style="@style/DetailItem.Title" />
+
+    <TextView
+        android:id="@+id/li_text"
+        style="@style/ListItem.Text"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="start"
+        android:hint="@string/hint_text" />
+
+    <TextView
+        android:id="@+id/li_longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:hint="@string/hint_longitude"
+        style="@style/DetailItem.Location"/>
+
+    <TextView
+        android:id="@+id/li_latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:hint="@string/hint_latitude"
+        style="@style/DetailItem.Location"/>
+
+</LinearLayout>
