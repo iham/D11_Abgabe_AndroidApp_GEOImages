@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">D11 GEOImages</string>
+    <string name="app_name" translatable="false">RichNotes</string>
     <string name="list" translatable="true">list (sortable)</string>
     <string name="hint_title">Note Title</string>
     <string name="hint_text">Note Information</string>
