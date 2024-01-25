@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         // load the content to fragment container
         loadFragment(ListingFragment())
-//        loadFragment(GridFragment())
 
         // navigation
         val nav = findViewById<BottomNavigationView>(R.id.navigation)
