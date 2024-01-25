@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     lateinit var richNotesDB: RichNotesDB
     lateinit var richNoteDao: RichNoteDao
     lateinit var richNotes: List<RichNote>
+    var selectedRichNote: RichNote? = null
 
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -97,8 +98,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             .setPositiveButton(getString(R.string.yes)) { dialog, which ->
                 Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show()
                 // TODO IHAM delete from DB
-//                richNoteDao.delete(richNotes.last())
+                richNoteDao.delete(selectedRichNote!!)
                 // and move back to last page as item doesn't exist anymore
+                selectedRichNote = null
                 supportFragmentManager.popBackStack()
             }
             .setNegativeButton(getString(R.string.no)) { dialog, which ->

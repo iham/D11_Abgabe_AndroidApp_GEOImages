@@ -45,6 +45,7 @@ class RichNoteListItemAdapter(private val dataSet: List<RichNote>) : RecyclerVie
         viewHolder.liImage.setImageResource(R.drawable.ic_action_format_list_bulleted)
 
         viewHolder.itemView.setOnClickListener {
+            (it.context as MainActivity).selectedRichNote = dataSet[position]
             (it.context as MainActivity).loadFragment(DetailFragment())
         }
     }
@@ -87,6 +88,7 @@ class RichNoteGridItemAdapter(private val dataSet: List<RichNote>) : RecyclerVie
         viewHolder.giImage.setImageResource(R.drawable.ic_action_format_list_bulleted)
 
         viewHolder.itemView.setOnClickListener {
+            (it.context as MainActivity).selectedRichNote = dataSet[position]
             (it.context as MainActivity).loadFragment(DetailFragment())
         }
     }

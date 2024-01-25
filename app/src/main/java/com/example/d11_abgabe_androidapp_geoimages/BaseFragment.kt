@@ -19,13 +19,15 @@ abstract class BaseFragment : Fragment(), MenuProvider {
     abstract val menuItems: List<Int>
     open var hasNavigation: Boolean = true
     open var hasBackButton: Boolean = false
-
+//    var selectedRichNote: RichNote? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         (activity as MainActivity).richNotes = (activity as MainActivity).richNoteDao.getAll()
-
+//        if ((activity as MainActivity).selectedRichNote != null) {
+//            Toas
+//        }
     }
 
     override fun onResume() {
@@ -70,6 +72,7 @@ abstract class BaseFragment : Fragment(), MenuProvider {
         return when(item.itemId) {
             R.id.add -> {
                 Toast.makeText(context, "Add & Edit", Toast.LENGTH_SHORT).show()
+                (activity as MainActivity).selectedRichNote = null
                 (activity as MainActivity).loadFragment(EditFragment())
                 true
             }
@@ -95,6 +98,7 @@ abstract class BaseFragment : Fragment(), MenuProvider {
             }
             android.R.id.home -> {
                 Toast.makeText(context, "Back", Toast.LENGTH_SHORT).show()
+                (activity as MainActivity).selectedRichNote = null
                 activity?.supportFragmentManager?.popBackStack()
                 true
             }
