@@ -29,6 +29,14 @@ val IMAGE_URIS =  listOf(
     "https://i.imgur.com/4svTnPf.jpeg",
     "https://i.imgur.com/gvqaZrW.jpeg",
     "https://i.imgur.com/70V0dhK.jpeg",
+    "https://i.imgur.com/MYUBwzI.jpeg",
+    "https://i.imgur.com/r81UjRI.jpeg",
+    "https://i.imgur.com/FgdFVem.jpeg",
+    "https://i.imgur.com/U8XFp92.jpeg",
+    "https://i.imgur.com/njoqt1x.jpeg",
+    "https://i.imgur.com/H1JSmox.jpeg",
+    "https://i.imgur.com/aSxHY4Z.jpeg",
+    "https://i.imgur.com/aoGcwhk.jpeg",
 )
 
 @Entity(tableName = "rich_notes")

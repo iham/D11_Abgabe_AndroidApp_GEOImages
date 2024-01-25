@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     fun deleteSampleData(amount: Int = 10) {
         var i = amount
-        if (i == -1) {
+        if (i == -1 || i > richNotes.size) {
             i = richNotes.size
         }
         repeat(i) {
