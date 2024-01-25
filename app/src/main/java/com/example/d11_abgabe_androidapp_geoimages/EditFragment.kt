@@ -25,22 +25,42 @@ class EditFragment : BaseFragment() {
     override fun onResume() {
         super.onResume()
         val note = (activity as MainActivity).selectedRichNote
-        view?.findViewById<EditText>(R.id.e_title)?.setText(note?.title)
-        view?.findViewById<EditText>(R.id.e_image_url)?.setText(note?.image)
-        view?.findViewById<EditText>(R.id.e_longitude)?.setText(
-            note?.longitude?.toString() ?: "0.0"
-        )
-        view?.findViewById<EditText>(R.id.e_latitude)?.setText(
-            note?.latitude?.toString() ?: "0.0"
-        )
-        view?.findViewById<EditText>(R.id.e_text)?.setText(note?.text)
-        Picasso.get()
-            .load(note?.image)
-            .fit()
-            .centerInside()
-            .placeholder(R.drawable.ic_action_image_search)
-            .into(view?.findViewById<ImageView>(R.id.e_image))
+        if (note != null) {
+            view?.findViewById<EditText>(R.id.e_title)?.setText(note.title)
+            if(note.image != "") {
+                view?.findViewById<EditText>(R.id.e_image_url)?.setText(note.image)
+                Picasso.get()
+                    .load(note.image)
+                    .fit()
+                    .centerInside()
+                    .placeholder(R.drawable.ic_action_image_search)
+                    .into(view?.findViewById<ImageView>(R.id.e_image))
+            }
+            else {
+                Picasso.get()
+                    .load(R.drawable.ic_action_image_search)
+                    .fit()
+                    .centerInside()
+                    .placeholder(R.drawable.ic_action_image_search)
+                    .into(view?.findViewById<ImageView>(R.id.e_image))
+            }
 
+            view?.findViewById<EditText>(R.id.e_longitude)?.setText(
+                note.longitude.toString() ?: "0.0"
+            )
+            view?.findViewById<EditText>(R.id.e_latitude)?.setText(
+                note.latitude.toString() ?: "0.0"
+            )
+            view?.findViewById<EditText>(R.id.e_text)?.setText(note.text)
+        }
+        else {
+            Picasso.get()
+                .load(R.drawable.ic_action_image_search)
+                .fit()
+                .centerInside()
+                .placeholder(R.drawable.ic_action_image_search)
+                .into(view?.findViewById<ImageView>(R.id.e_image))
+        }
     }
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
@@ -49,7 +69,7 @@ class EditFragment : BaseFragment() {
             R.id.save -> {
                 val title = view?.findViewById<EditText>(R.id.e_title)?.text.toString()
                 val text = view?.findViewById<EditText>(R.id.e_text)?.text.toString()
-                val image = view?.findViewById<EditText>(R.id.e_image_url)?.text.toString()
+                val image = view?.findViewById<EditText>(R.id.e_image_url)?.text.toString()?: ""
                 val longitude = view?.findViewById<EditText>(R.id.e_longitude)?.text.toString().toDouble()
                 val latitude = view?.findViewById<EditText>(R.id.e_latitude)?.text.toString().toDouble()
 
