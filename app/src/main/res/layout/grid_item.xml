@@ -1,39 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/gi_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-<!--
+        android:layout_height="360dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/gi_title"
-        android:background="@color/black"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@+id/label"
-        android:layout_marginTop="3dp"
-        android:textSize="15sp" />
+        android:background="@color/black"
+        android:text="@+id/gi_title"
+        android:textColor="@color/purple_700"
+        android:textSize="15sp"
+        app:layout_constraintTop_toTopOf="@+id/gi_image" />
 
     <TextView
         android:id="@+id/gi_node_id"
-        android:background="@color/black"
-        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@+id/note_id"
-        android:layout_marginTop="3dp"
-        android:textSize="10sp" />
+        android:layout_marginTop="340dp"
+        android:background="@color/black"
+        android:text="ID @+id/note_id"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/gi_image" />
 
     <ImageView
         android:id="@+id/gi_location"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
+        android:layout_width="17dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="31dp"
         android:src="@drawable/ic_add_location"
-        android:layout_marginEnd="10dp" />
--->
-</RelativeLayout>
+        app:layout_constraintEnd_toEndOf="@+id/gi_image"
+        tools:layout_editor_absoluteY="328dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="391dp" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/layer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="gi_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
