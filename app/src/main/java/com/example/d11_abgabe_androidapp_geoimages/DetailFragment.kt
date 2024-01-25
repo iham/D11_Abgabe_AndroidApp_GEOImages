@@ -22,7 +22,6 @@ class DetailFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        Toast.makeText(context, "resume detail", Toast.LENGTH_SHORT).show()
         // fill data into fields
         val note = (activity as MainActivity).selectedRichNote
         if(note != null) {
