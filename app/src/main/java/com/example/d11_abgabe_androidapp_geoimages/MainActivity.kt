@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         // enable toolbar
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_action_arrow_back)
