@@ -3,7 +3,9 @@ package com.example.d11_abgabe_androidapp_geoimages
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
+import com.squareup.picasso.Picasso
 
 class EditFragment : BaseFragment() {
     override val contentView = R.layout.fragment_edit
@@ -31,9 +33,10 @@ class EditFragment : BaseFragment() {
             note?.latitude?.toString() ?: "0.0"
         )
         view?.findViewById<EditText>(R.id.e_text)?.setText(note?.text)
-//            if (note.image != "") {
-//                view?.findViewById<ImageView>(R.id.d_image)?.setImageDrawable(note.image)
-//            }
+        Picasso.get()
+            .load(note?.image)
+            .error(R.drawable.ic_action_image_search)
+            .into(view?.findViewById<ImageView>(R.id.e_image))
 
     }
 

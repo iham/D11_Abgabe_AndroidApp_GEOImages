@@ -127,7 +127,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             val richNote = RichNote(
                 "Title $it",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-                "",
+                IMAGE_URIS[Random.nextInt(IMAGE_URIS.size)],
                 sampleLocation.longitude,
                 sampleLocation.latitude,
             )
