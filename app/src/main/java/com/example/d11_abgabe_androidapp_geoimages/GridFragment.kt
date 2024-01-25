@@ -21,7 +21,7 @@ class GridFragment : BaseFragment() {
         // data connection
         val recyclerView = activity?.findViewById<RecyclerView>(R.id.grid_list)
         recyclerView?.hasFixedSize()
-        recyclerView?.layoutManager = StaggeredGridLayoutManager(4, LinearLayoutManager.VERTICAL)
+        recyclerView?.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
         recyclerView?.adapter = RichNoteGridItemAdapter((activity as MainActivity).richNotes)
         recyclerView?.adapter?.notifyDataSetChanged()
     }
