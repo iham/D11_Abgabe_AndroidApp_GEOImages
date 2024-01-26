@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">RichNote</string>
-    <string name="list" translatable="true">Liste (sortierbar)</string>
+    <string name="list" translatable="true">Liste</string>
     <string name="hint_title">Notiz Titel</string>
     <string name="hint_text">Note Information</string>
     <string name="add">Einfügen</string>
@@ -10,10 +10,10 @@
     <string name="yes">Ja</string>
     <string name="no">Nein</string>
     <string name="sort" translatable="true">Sortierung</string>
-    <string name="sort_down" translatable="true">absteigend</string>
-    <string name="sort_up" translatable="true">aufsteigend</string>
+    <string name="sort_down" translatable="true">absteigend sortieren</string>
+    <string name="sort_up" translatable="true">aufsteigend sortieren</string>
     <string name="note_deleted">Rich-Note gelöscht</string>
-    <string name="delete_message">Do you really want to delete this note?</string>
+    <string name="delete_message">Willst du den Eintrag wirklich löschen?</string>
     <string name="image">Foto</string>
     <string name="text">Notiz Text</string>
     <string name="longitude">Longitude</string>
@@ -24,7 +24,28 @@
     <string name="hint_latitude">Latitude</string>
     <string name="fragment_detail">FRAGMENT Detailinfo</string>
     <string name="fragment_edit">FRAGMENT Bearbeiten</string>
-    <string name="fragment_map">FRAGMENT Map</string>
-    <string name="static_map">Static Map</string>
+    <string name="fragment_map">FRAGMENT Karte</string>
+    <string name="static_map">Statische Karte</string>
     <string name="click_for_update">Click for Update</string>
+    <string name="add_a_sample">Füge einen Satz dazu</string>
+    <string name="add_samples_10">Füge (10) Sätze dazu</string>
+    <string name="delete_samples_10">Lösche (10) Sätze</string>
+    <string name="delete_all_samples">Lösche alle Sätze</string>
+    <string name="samples_created">Sätze erstellt</string>
+    <string name="edit">Modifizieren</string>
+    <string name="grid">Grid</string>
+    <string name="map">Karte</string>
+    <string name="remove">Eintrag Löschen</string>
+    <string name="fragment_overlay">FRAGMENT Überlagern</string>
+    <string name="permission_granted">Erlaubnis erteilt</string>
+    <string name="permission_denied">Erlaubnis nicht erteilt</string>
+    <string name="abort">Abbruch</string>
+    <string name="samples_deleted">Samples deleted</string>
+    <string name="sort_title_asc">Sortierung Titel aufsteigend</string>
+    <string name="sort_title_desc">Sortierung Titel absteigend</string>
+    <string name="updated_richnote">Notizeintrag geändert</string>
+    <string name="created_richnote">neuer Notizeintrag erstellt</string>
+    <string name="add_and_edit"><![CDATA[Add & Edit]]></string>
+    <string name="editing">... Änderung</string>
+    <string name="deleting">... Löschen</string>
 </resources>

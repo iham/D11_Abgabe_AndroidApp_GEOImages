@@ -27,4 +27,26 @@
     <string name="fragment_map">FRAGMENT Map</string>
     <string name="static_map">Static Map</string>
     <string name="click_for_update">Click for Update</string>
+    <string name="add_a_sample">Add A Sample</string>
+    <string name="add_samples_10">Add Samples (10)</string>
+    <string name="delete_samples_10">Delete Samples (10)</string>
+    <string name="delete_all_samples">Delete All Samples</string>
+    <string name="samples_created">Samples created</string>
+    <string name="edit">Edit</string>
+    <string name="grid">Grid</string>
+    <string name="map">Map</string>
+    <string name="remove">remove</string>
+    <string name="fragment_overlay">FRAGMENT Overlay</string>
+    <string name="permission_granted">Permission Granted</string>
+    <string name="permission_denied">Permission Denied</string>
+    <string name="abort">Abort</string>
+    <string name="samples_deleted">Samples deleted</string>
+    <string name="sort_title_asc">Sort Title ASC</string>
+    <string name="sort_title_desc">Sort Title DESC</string>
+    <string name="updated_richnote">Updated RichNote</string>
+    <string name="created_richnote">Created new RichNote</string>
+    <string name="add_and_edit"><![CDATA[Add & Edit]]></string>
+    <string name="editing">Editing</string>
+    <string name="deleting">Deleting</string>
+
 </resources>

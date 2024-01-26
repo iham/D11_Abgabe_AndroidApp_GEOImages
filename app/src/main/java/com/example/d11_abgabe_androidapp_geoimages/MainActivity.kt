@@ -78,10 +78,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), LocationListener
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == locationPermissionCode) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.permission_granted), Toast.LENGTH_SHORT).show()
             }
             else {
-                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.permission_denied), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -102,9 +102,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), LocationListener
 
     fun showDeleteDialog() {
         AlertDialog.Builder(this)
-            .setMessage("Do you want to remove this note?")
+            .setMessage(getString(R.string.delete_message))
             .setPositiveButton(getString(R.string.yes)) { dialog, which ->
-                Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.note_deleted), Toast.LENGTH_SHORT).show()
                 richNoteDao.delete(selectedRichNote!!)
 
                 // and move back to last page as item doesn't exist anymore
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), LocationListener
                 supportFragmentManager.popBackStack()
             }
             .setNegativeButton(getString(R.string.no)) { dialog, which ->
-                Toast.makeText(this, "Abort", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.abort), Toast.LENGTH_SHORT).show()
             }
             .show()
     }
@@ -138,7 +138,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), LocationListener
             )
             richNoteDao.insertAll(richNote)
         }
-        Toast.makeText(this, "$amount Samples created", Toast.LENGTH_SHORT).show()
+
+        Toast.makeText(this, "$amount ${getString(R.string.samples_created)}", Toast.LENGTH_SHORT).show()
     }
 
     fun deleteSampleData(amount: Int = 10) {
@@ -149,7 +150,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), LocationListener
         repeat(i) {
             richNoteDao.delete(richNotes[it])
         }
-        Toast.makeText(this, "$i Samples deleted", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "$i ${getString(R.string.samples_deleted)}", Toast.LENGTH_SHORT).show()
     }
 
     private fun generateRandomLocationInsideRadius(x0: Double, y0: Double, radius: Int): LatLng {
