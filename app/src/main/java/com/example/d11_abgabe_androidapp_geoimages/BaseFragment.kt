@@ -68,7 +68,7 @@ abstract class BaseFragment : Fragment(), MenuProvider {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.add -> {
-                Toast.makeText(context, "Add & Edit", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, getString(R.string.add_and_edit), Toast.LENGTH_SHORT).show()
                 (activity as MainActivity).selectedRichNote = null
                 (activity as MainActivity).loadFragment(EditFragment())
                 true

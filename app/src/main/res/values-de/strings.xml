@@ -31,8 +31,21 @@
     <string name="add_samples_10">Füge (10) Sätze dazu</string>
     <string name="delete_samples_10">Lösche (10) Sätze</string>
     <string name="delete_all_samples">Lösche alle Sätze</string>
+    <string name="samples_created">Sätzer erstellt</string>
+    <string name="edit">Modifizieren</string>
     <string name="grid">Grid</string>
     <string name="map">Karte</string>
     <string name="remove">Eintrag Löschen</string>
-    <string name="fragment_overlay">FRAGMENT Overlay</string>
+    <string name="fragment_overlay">FRAGMENT Überlagern</string>
+    <string name="permission_granted">Erlaubnis erteilt</string>
+    <string name="permission_denied">Erlaubnis nicht erteilt</string>
+    <string name="abort">Abbruch</string>
+    <string name="samples_deleted">Samples deleted</string>
+    <string name="sort_title_asc">Sort Title ASC</string>
+    <string name="sort_title_desc">Sort Title DESC</string>
+    <string name="updated_richnote">Notizeintrag geändert</string>
+    <string name="created_richnote">neuer Notizeintrag erstellt</string>
+    <string name="add_and_edit"><![CDATA[Add & Edit]]></string>
+    <string name="editing">... Änderung</string>
+    <string name="deleting">... Löschen</string>
 </resources>

@@ -29,11 +29,11 @@ class GridFragment : BaseFragment() {
         return when (menuItem.itemId) {
             // sorting
             R.id.title_asc -> {
-                Toast.makeText(activity, "sort title ASC", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, getString(R.string.sort_title_asc), Toast.LENGTH_LONG).show()
                 true
             }
             R.id.title_desc -> {
-                Toast.makeText(activity, "sort title DESC", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, getString(R.string.sort_title_desc), Toast.LENGTH_LONG).show()
                 true
             }
             else -> super.onOptionsItemSelected(menuItem)

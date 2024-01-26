@@ -56,13 +56,13 @@ class DetailFragment : BaseFragment() {
         return when (menuItem.itemId) {
             // add new RichNote
             R.id.edit -> {
-                Toast.makeText(activity, "Editing", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, getString(R.string.editing), Toast.LENGTH_LONG).show()
                 (activity as MainActivity).loadFragment(EditFragment())
                 true
             }
             // remove
             R.id.remove -> {
-                Toast.makeText(activity, "Delete", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, getString(R.string.deleting), Toast.LENGTH_LONG).show()
                 (activity as MainActivity).showDeleteDialog()
                 true
             }

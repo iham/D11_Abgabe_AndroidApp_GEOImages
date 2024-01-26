@@ -103,7 +103,7 @@ class EditFragment : BaseFragment() {
 
                 Toast.makeText(
                     activity,
-                    if (richNote != null) "Updated RichNote" else "Created RichNote",
+                    if (richNote != null) getString(R.string.updated_richnote) else getString(R.string.created_richnote),
                     Toast.LENGTH_SHORT
                 ).show()
 
